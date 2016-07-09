@@ -14,4 +14,4 @@ VOLUME /data
 
 EXPOSE 25565 25575
 
-ENTRYPOINT /start.sh
+CMD /start.sh
