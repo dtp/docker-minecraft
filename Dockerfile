@@ -3,7 +3,7 @@ MAINTAINER cm_star
 
 ENV TYPE "vanilla"
 ENV VERSION "release"
-ENV JVM_OPTS ""
+ENV JVM_OPTS "-Xms512M -Xmx1G"
 
 RUN apk add --no-cache wget ca-certificates jq
 
