@@ -12,7 +12,7 @@ RUN apk add --no-cache wget ca-certificates jq
 
 # Copy scripts and set permissions
 COPY init.sh start.sh /
-RUN chmod +x /init.sh /start/sh
+RUN chmod +x /init.sh /start.sh
 
 # Define mountable directory
 VOLUME ["/data"]
