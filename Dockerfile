@@ -9,9 +9,11 @@ RUN apk add --no-cache wget ca-certificates jq
 
 COPY init.sh start.sh /
 
+RUN chmod +x /init.sh /start/sh
+
 WORKDIR /data
 VOLUME /data
 
 EXPOSE 25565 25575
 
-CMD /start.sh
+CMD ["/bin/sh", "/start.sh"]
