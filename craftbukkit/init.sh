@@ -10,4 +10,3 @@
   printf "Clean up...\n"
   rm -rf *
 )
-apk del --no-cache git bash

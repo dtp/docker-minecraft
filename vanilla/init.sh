@@ -14,4 +14,3 @@ printf "Downloading version manifest...\n"
   rm -rf *
 )
 printf "Clean up...\n"
-apk del --no-cache jq
