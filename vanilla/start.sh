@@ -1,7 +1,6 @@
 #!/bin/sh
 
-if [ -e "/init" ]; then
-  /init
-  rm -f init
+if [ ! -e "/minecraft/server.jar" ]; then
+  /init.sh
 fi
-exec java $JVM_OPTS -jar /minecraft/server.jar nogui
+exec java $@ -jar /minecraft/server.jar nogui

@@ -1,7 +1,6 @@
 #!/bin/sh
 
-if [ -e "/init" ]; then
-  /init
-  rm -f /init
+if [ ! -e "/spigot/spigot.jar" ]; then
+  /init.sh $@
 fi
-exec java $JVM_OPTS -jar /spigot/spigot.jar
+exec java $@ -jar /spigot/spigot.jar

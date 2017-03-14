@@ -1,7 +1,6 @@
 #!/bin/sh
 
-if [ -e "/init" ]; then
-  /init
-  rm -f init
+if [ ! -e "/craftbukkit/craftbukkit.jar" ]; then
+  /init.sh
 fi
-exec java $JVM_OPTS -jar /craftbukkit/craftbukkit.jar
+exec java $@ -jar /craftbukkit/craftbukkit.jar

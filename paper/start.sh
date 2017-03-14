@@ -1,7 +1,6 @@
 #!/bin/sh
 
-if [ -e "/init" ]; then
-  /init
-  rm -f init
+if [ ! -e "/paper/paperclip.jar" ]; then
+  /init.sh $@
 fi
-exec java $JVM_OPTS -jar /paper/paperclip.jar
+exec java $@ -jar /paper/paperclip.jar
