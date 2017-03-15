@@ -36,11 +36,6 @@ Starting a simple Forge server is similar to vanilla.
 ```console
 $ docker run -itd --name minecraft -e VERSION="1.10.2-recommended" -p 25565:25565 -v /path/to/minecraft:/data cmstar/minecraft
 ```
-To specify a custom `mods` directory, where `/path/to/mods` is the path to the
-mods directory.
-```console
-$ docker run -itd --name minecraft -e VERSION="1.10.2-recommended" -p 25565:25565 -v /path/to/minecraft:/data -v /path/to/mods:/forge/mods cmstar/minecraft
-```
 To load a (zipped) Curse modpack, where `modpack.zip` is the path to modpack in
 `/path/to/minecraft`.
 ```console

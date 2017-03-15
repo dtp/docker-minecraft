@@ -31,12 +31,18 @@ printf "Installing Forge server...\n"
 (
   cd /forge
   java $@ -jar /tmp/forge-*-installer.jar --installServer > /dev/null
-  if [ "$MODPACK" ]; then
-    printf "Downloading mods...\n"
-    for i in $(jq -cr '.files[]' < /tmp/manifest.json); do
-      wget --content-disposition -nc -qP mods $(curl -Lso /dev/null -w %{url_effective} https://minecraft.curseforge.com/projects/$(printf "$i" | jq -r '.projectID'))/files/$(printf "$i" | jq -r '.fileID')/download
-    done
-  fi
 )
+mkdir -p mods
+mv -n /forge/mods/* mods
+if [ "$MODPACK" ]; then
+  rm -f mods/*.jar mods/*.zip
+  printf "Downloading mods...\n"
+  for i in $(jq -cr '.files[]' < /tmp/manifest.json); do
+    wget --content-disposition -qP mods $(curl -Lso /dev/null -w %{url_effective} https://minecraft.curseforge.com/projects/$(printf "$i" | jq -r '.projectID'))/files/$(printf "$i" | jq -r '.fileID')/download
+  done
+  printf "Using modpack overrides...\n"
+  cp -r /tmp/$(jq -r '.overrides' < /tmp/manifest.json)/* .
+fi
 printf "Clean up...\n"
 rm -rf /tmp/*
+touch /forge/.init_done

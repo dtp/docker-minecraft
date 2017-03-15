@@ -15,7 +15,7 @@ COPY init.sh start.sh /
 RUN chmod +x /init.sh /start.sh
 
 # Define mountable directories
-VOLUME ["/data", "/forge/mods"]
+VOLUME ["/data"]
 
 # Define working directory
 WORKDIR /data
