@@ -3,7 +3,7 @@ Containerized Minecraft server that runs on Alpine Linux
 
 ## Available tags and Dockerfiles
 -	[`vanilla`, `latest`, (*vanilla/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/vanilla/Dockerfile)
--	[`forge`, (*vanilla/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/forge/Dockerfile)
+-	[`forge`, (*forge/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/forge/Dockerfile)
 -	[`paper`, (*vanilla/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/paper/Dockerfile)
 -	[`spigot`, (*vanilla/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/spigot/Dockerfile)
 -	[`craftbukkit`, (*vanilla/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/craftbukkit/Dockerfile)
@@ -30,6 +30,25 @@ To customize the Java Virtual Machine (JVM) arguments, pass them as arguments
 after specifying the container image.
 ```console
 $ docker run -itd --name minecraft -p 25565:25565 -v /path/to/minecraft:/data cmstar/minecraft -Xms512M -Xmx1G
+```
+### Using the Forge image
+Starting a simple Forge server is similar to vanilla.
+```console
+$ docker run -itd --name minecraft -e VERSION="1.10.2-recommended" -p 25565:25565 -v /path/to/minecraft:/data cmstar/minecraft
+```
+To specify a custom `mods` directory, where `/path/to/mods` is the path to the
+mods directory.
+```console
+$ docker run -itd --name minecraft -e VERSION="1.10.2-recommended" -p 25565:25565 -v /path/to/minecraft:/data -v /path/to/mods:/forge/mods cmstar/minecraft
+```
+To load a (zipped) Curse modpack, where `modpack.zip` is the path to modpack in
+`/path/to/minecraft`.
+```console
+$ docker run -itd --name minecraft -e VERSION="1.10.2-recommended" -e MODPACK="modpack.zip" -p 25565:25565 -v /path/to/minecraft:/data cmstar/minecraft
+```
+Alternatively, load a (zipped) Curse modpack from a URL.
+```console
+$ docker run -itd --name minecraft -e VERSION="1.10.2-recommended" -e MODPACK="https://example.com/modpack.zip" -p 25565:25565 -v /path/to/minecraft:/data cmstar/minecraft
 ```
 ### Accessing the server's TTY
 ```console
