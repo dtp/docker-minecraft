@@ -4,7 +4,7 @@
   cd /tmp
   if [ "$MODPACK" ]; then
     printf "Using specified modpack...\n"
-    if [ "$MODPACK" == *"://"* ]; then
+    if printf "$MODPACK" | grep -q '://'; then
       wget -qO modpack.zip "$MODPACK"
     else
       cp "/data/$MODPACK" modpack.zip
