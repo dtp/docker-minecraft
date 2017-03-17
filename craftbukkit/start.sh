@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -e "/craftbukkit/craftbukkit.jar" ]; then
+if [ ! -e /craftbukkit/.init_done ]; then
   /init.sh
 fi
 exec java $@ -jar /craftbukkit/craftbukkit.jar

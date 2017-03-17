@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -e "/spigot/spigot.jar" ]; then
+if [ ! -e /spigot/.init_done ]; then
   /init.sh $@
 fi
 exec java $@ -jar /spigot/spigot.jar

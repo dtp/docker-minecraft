@@ -13,3 +13,4 @@ printf "Downloading version manifest...\n"
   printf "Clean up...\n"
   rm -rf *
 )
+touch /minecraft/.init_done

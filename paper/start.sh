@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -e "/paper/paperclip.jar" ]; then
+if [ ! -e /paper/.init_done ]; then
   /init.sh $@
 fi
 exec java $@ -jar /paper/paperclip.jar

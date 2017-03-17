@@ -10,3 +10,4 @@
   printf "Clean up...\n"
   rm -rf *
 )
+touch /craftbukkit/.init_done

@@ -10,3 +10,4 @@
   printf "Clean up...\n"
   rm -rf *
 )
+touch /spigot/.init_done
