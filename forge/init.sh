@@ -31,7 +31,7 @@ printf "Installing Forge server...\n"
 (
   cd /forge
   mkdir mods # For < 12.18.3.2202
-  java $@ -jar /tmp/forge-*-installer.jar --installServer > /dev/null
+  java $@ -Djava.net.preferIPv4Stack=true -jar /tmp/forge-*-installer.jar --installServer > /dev/null
 )
 mkdir -p mods
 mv -n /forge/mods/* mods
