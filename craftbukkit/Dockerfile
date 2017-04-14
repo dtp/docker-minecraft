@@ -4,7 +4,7 @@
 #
 
 # Pull base image
-FROM java:alpine
+FROM openjdk:jre-alpine
 
 # Install dependencies and configure git for BuildTools
 RUN apk add --no-cache wget ca-certificates git bash && \

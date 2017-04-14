@@ -4,7 +4,7 @@
 #
 
 # Pull base image
-FROM java:alpine
+FROM openjdk:jre-alpine
 
 # Install dependencies
 RUN apk add --no-cache wget ca-certificates; \
