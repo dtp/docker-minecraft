@@ -7,8 +7,9 @@
 FROM openjdk:9-jre-slim
 
 # Install dependencies
-RUN apt-get update \
+RUN apt-get update; \
     apt-get install -y --no-install-recommends wget curl ca-certificates jq; \
+    rm -rf /var/lib/apt/lists/*; \
     mkdir /forge
 
 # Copy scripts and set permissions

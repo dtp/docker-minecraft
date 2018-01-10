@@ -7,8 +7,9 @@
 FROM openjdk:9-jre-slim
 
 # Install dependencies
-RUN apt-get update \
+RUN apt-get update; \
     apt-get install -y --no-install-recommends wget ca-certificates jq; \
+    rm -rf /var/lib/apt/lists/*; \
     mkdir /minecraft
 
 # Copy scripts and set permissions
