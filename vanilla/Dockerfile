@@ -4,10 +4,11 @@
 #
 
 # Pull base image
-FROM openjdk:jre-alpine
+FROM openjdk:9-jre-slim
 
 # Install dependencies
-RUN apk add --no-cache wget ca-certificates jq; \
+RUN apt-get update \
+    apt-get install -y --no-install-recommends wget ca-certificates jq; \
     mkdir /minecraft
 
 # Copy scripts and set permissions

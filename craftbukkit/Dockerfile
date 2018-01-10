@@ -4,10 +4,11 @@
 #
 
 # Pull base image
-FROM openjdk:jre-alpine
+FROM openjdk:9-jre-slim
 
 # Install dependencies and configure git for BuildTools
-RUN apk add --no-cache wget ca-certificates git bash && \
+RUN apt-get update \
+    apt-get install -y --no-install-recommends wget ca-certificates git bash && \
     mkdir /craftbukkit
 
 # Copy scripts and set permissions

@@ -4,10 +4,11 @@
 #
 
 # Pull base image
-FROM openjdk:jre-alpine
+FROM openjdk:9-jre-slim
 
 # Install dependencies
-RUN apk add --no-cache wget curl ca-certificates jq; \
+RUN apt-get update \
+    apt-get install -y --no-install-recommends wget curl ca-certificates jq; \
     mkdir /forge
 
 # Copy scripts and set permissions
