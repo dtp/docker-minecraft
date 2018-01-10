@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ ! -e /spigot/.init_done ]; then
   /init.sh $@

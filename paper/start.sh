@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ ! -e /paper/.init_done ]; then
   /init.sh $@

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ ! -e /minecraft/.init_done ]; then
   /init.sh

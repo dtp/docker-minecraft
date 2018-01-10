@@ -22,7 +22,7 @@ VOLUME ["/data"]
 WORKDIR /data
 
 # Define start entry point
-ENTRYPOINT ["/bin/sh", "/start.sh"]
+ENTRYPOINT ["/bin/bash", "/start.sh"]
 
 # Expose server and RCON ports
 EXPOSE 25565 25575
