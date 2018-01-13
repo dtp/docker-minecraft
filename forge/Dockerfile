@@ -4,7 +4,7 @@
 #
 
 # Pull base image
-FROM openjdk:9-jre-slim
+FROM openjdk:8-jre-slim
 
 # Install dependencies
 RUN apt-get update; \
