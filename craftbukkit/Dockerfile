@@ -8,7 +8,7 @@ FROM openjdk:9-jre-slim
 
 # Install dependencies and configure git for BuildTools
 RUN apt-get update; \
-    apt-get install -y --no-install-recommends wget ca-certificates git \
+    apt-get install -y --no-install-recommends wget ca-certificates git; \
     rm -rf /var/lib/apt/lists/*; \
     mkdir /craftbukkit
 
