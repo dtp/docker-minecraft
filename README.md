@@ -4,6 +4,7 @@ Containerized Minecraft server that runs on Debian Slim
 ## Available tags and Dockerfiles
 -	[`vanilla`, `latest`, (*vanilla/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/vanilla/Dockerfile)
 -	[`forge`, (*forge/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/forge/Dockerfile)
+- [`spongevanilla`, (*spongevanilla/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/spongevanilla/Dockerfile)
 -	[`paper`, (*vanilla/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/paper/Dockerfile)
 -	[`spigot`, (*vanilla/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/spigot/Dockerfile)
 -	[`craftbukkit`, (*vanilla/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/craftbukkit/Dockerfile)

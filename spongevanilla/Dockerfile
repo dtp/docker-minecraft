@@ -1,5 +1,5 @@
 #
-# Minecraft server (Sponge) Dockerfile
+# Minecraft server (SpongeVanilla) Dockerfile
 # https://github.com/dtp/docker-minecraft
 #
 
