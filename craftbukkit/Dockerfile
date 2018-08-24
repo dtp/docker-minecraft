@@ -4,7 +4,7 @@
 #
 
 # Pull base image
-FROM openjdk:8-jre-slim
+FROM openjdk:10-jre-slim
 
 # Install dependencies and configure git for BuildTools
 RUN apt-get update; \
